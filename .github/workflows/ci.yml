@@ -1,1 +1,20 @@
+name: CI
 
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Testar workflow
+        run: echo "GitHub Actions funcionando!"
+
+      - name: Listar arquivos
+        run: ls -la
